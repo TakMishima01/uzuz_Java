@@ -12,7 +12,9 @@ class Ex1_08_3 {
 		int input2 = Integer.parseInt(args[1]) ;                      //(12行目)アンダーバーに適切な処理を埋めてください
 		int input3 = Integer.parseInt(args[2]) ;                      //(13行目)アンダーバーに適切な処理を埋めてください
 		                                                   
-		System.out.println( input1 + input2 + input3 );    //(15行目)変更しないでください
+		System.out.println( input1 + input2 + input3 );  
+		
+		//(15行目)変更しないでください
 		
 	}
 }
