@@ -11,11 +11,11 @@
 --------------------------------------------------------------------------------------*/
 class Ex1_05_1 {
 	public static void main (String[] args) {
-		int itLifetimeWage = 276000000 ;  //IT業界の生涯賃金
-		long itMarketSize = 12000097000000L;  //IT業界の市場規模
-		char favoriteKanji = '漢';  //自分の好きな漢字一文字
-		String dreamJob = "エンジニア";  //なりたい職業
-		boolean previousGraduate = true; //既卒かどうか
+		int          itLifetimeWage        = 276000000 ;  //IT業界の生涯賃金
+		long        itMarketSize           = 12000097000000L;  //IT業界の市場規模
+		char       favoriteKanji           = '漢';  //自分の好きな漢字一文字
+		String    dreamJob                 = "エンジニア";  //なりたい職業
+		boolean isPreviousGraduate = true; //既卒かどうか
 		
 	}
 }
