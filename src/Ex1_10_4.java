@@ -13,8 +13,15 @@ class Ex1_10_4 {
 		                       {"ブブ" ,"ブルドッグ　" ,"3歳" ,"メス"},
 		                       {"シロ" ,"秋田犬　　　" ,"8歳" ,"オス"}
 		                     };
-		
-		
+		String display = ""; //出力データ格納用
+		for ( int i = 0 ; i < animals.length ; i++) {
+			display = "";
+			display = animals[i][0];
+			for ( int j = 1  ; j < animals[i].length ; j++) {
+				display = display + " / " +  animals[i][j]; 
+			}
+			System.out.println(display);
+		}
 		/*
 		**以下の条件を満たす2次元配列のデータ抽出&表示する処理を書いてください。
 		**  - for文を2つ組み合わせる
