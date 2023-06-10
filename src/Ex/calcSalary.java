@@ -8,9 +8,9 @@ public class calcSalary {
 		
 		
 		// 計算用の数値を定数で用意
-		final long ONE_HOUR_BY_MILLI_SEC = 1000 * 60 * 60; // 1時間のミリ秒換算
+//		final long ONE_HOUR_BY_MILLI_SEC = 1000 * 60 * 60; // 1時間のミリ秒換算
 		final long ONE_MIN_BY_MILLI_SEC  = 1000 * 60;      // 1分のミリ秒換算
-		final int  ONE_HOUR_BY_MIN       = 60;             // 1時間の分換算
+//		final int  ONE_HOUR_BY_MIN       = 60;             // 1時間の分換算
 
 		final int REST_TIME1 = 45 ; //休憩時間(分)（6時間超〜8時間以下）
 		final int REST_TIME2 = 60 ; //休憩時間(分)（8時間超）
