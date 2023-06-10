@@ -1,3 +1,5 @@
+package uz2;
+
 class Sample2_02_1_drive {
 	public static void main (String[] args) {
 		

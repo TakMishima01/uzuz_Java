@@ -17,7 +17,7 @@ public class ReadFileSample {
 	public static void main(String[] args) {
 		
 		//  WorkingResult.csvのパス ※「C:\WorkSpace」直下に配置していない場合は適宜変更してください。
-		final String WORKING_RESULT_FILE_PATH = "//Users//mishimario//Downloads//J1-EX2_総合演習（勤怠プログラムの作成）//参考ソースコード//UTF-8版//WorkingResult.csv";
+		final String WORKING_RESULT_FILE_PATH = "//Users//WorkingResult.csv";
 		// コンマ
 		final String COMMA = ","; 
 		

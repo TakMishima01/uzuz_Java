@@ -14,7 +14,7 @@ public class ReadFileCalcSalary {
 		//------------定数の定義------------
 		//  CSVファイルのパスを指定
 		final String WORKING_RESULT_FILE_PATH = 
-				"//Users//mishimario//Downloads//J1-EX2_総合演習（勤怠プログラムの作成）//参考ソースコード//UTF-8版//WorkingResult.csv";
+				"//Users//WorkingResult.csv";
 		final String COMMA = ","; //区切る場所の指定
 		
 		//------------CSVファイルの読み込み------------

@@ -1,3 +1,5 @@
+package uz2;
+
 class Sample2_02_2_car {
 	
 	//---フィールド（クラス直下で定義された変数）----------------
@@ -22,14 +24,14 @@ class Sample2_02_2_car {
 	}
 	
 	//コンストラクタ②（引数あり）
-	Sample2_02_2_car(String carModel , String owner , String color , int speed , boolean right ){
+	Sample2_02_2_car(String cm , String on , String cl , int sp , boolean rt ){
 		this();                    //コンストラクタ①（引数なし）の起動
 		System.out.println("　　▼コンストラクタ②（引数あり）-------------------------") ;
-		this.carModel = carModel ;  //車種名
-		owner         = owner    ;  //オーナー
-		color         = color    ;  //塗装色
-		speed         = speed    ;  //現在の速度
-		right         = right    ;  //ライト（true:点灯/false:消灯）
+		this.carModel = cm ;  //車種名
+		this.owner         = on    ;  //オーナー
+		this.color         = cl    ;  //塗装色
+		this.speed         = sp    ;  //現在の速度
+		this.right         = rt    ;  //ライト（true:点灯/false:消灯）
 		System.out.println("　　▲-----------------------------------------------------") ;
 	}
 	
