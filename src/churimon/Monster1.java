@@ -18,6 +18,8 @@ public class Monster1 {
 	String	wazaNm		=	"たいあたり"	;	//わざ（なまえ）
 	String	wazaDmgRate	=	"1.0"				;	//わざ（ダメージ倍率）
 	
+	//メソッド----------------------------------------
+	
 	public String toString() {
 		return 
 				"character:" 	+ this.character 	+ "/" + 
@@ -34,7 +36,7 @@ public class Monster1 {
 		
 	}
 	
-	public void levelUp( int lu ) {
+	void levelUp( int lu ) {
 		this.lv			=	lu * 1 + this.lv				; //上昇レベル×1の値を既存値にプラスする
 		this.hpMax	=	lu * 30 + this.hpMax	; //上昇レベル×30の値を既存値にプラスする
 		this.atk			=	lu * 5 + this.atk			; //上昇レベル×5の値を既存値にプラスする
@@ -43,36 +45,51 @@ public class Monster1 {
 		this.hp			=	this.hpMax					; //更新後のhp_maxの値を代入する
 	}
 	
-	public void setWaza ( String wn , String wdr ) {
-		if ( wdr.matches("^[0-9]+¥.[0-9]$") ) {
-			this.wazaNm = wn;
-			this.wazaDmgRate = wdr;
+	void setWaza ( String wn , String wdr ) {
+		
+		final String WAZA_DMG_RATE_REGEXP = "^[0-9]+\\.[0-9]$";
+		
+		if ( wdr.matches(WAZA_DMG_RATE_REGEXP) ) {
+			wazaNm = wn;
+			wazaDmgRate = wdr;
 		}else {
 			System.out.println("[ERROR]わざの設定に失敗しました");
 		}
 	}
 	
-	public String getStatus () {
+	String getStatus () {
 		String st = this.name + "lv" + this.lv + "HP" + this.hp + "/" + this.hpMax ;
 		return st ;  //ステータス情報(一部フィールドの情報)を文字列で返す
 	}
 	
-	public int useWaza () {
+	int useWaza () {
 		BigDecimal atk = new BigDecimal(this.atk);
         BigDecimal wdr = new BigDecimal(this.wazaDmgRate);
-        int dmg = atk.intValue() * wdr.intValue() ; //相手に値渡しするダメージ:こうげき×わざのダメージ倍率
+        
+        System.out.println(atk + ":" + wdr);
+        
+        int dmg = (atk.multiply(wdr)).intValue() ; //相手に値渡しするダメージ:こうげき×わざのダメージ倍率
+        
+        System.out.println(dmg);
+        
 		return dmg ; //相手にダメージ値を渡す
 	}
 	
-	public int damaged (int dmg) {
+	int damaged (int dmg) {
+		
+		System.out.println(dmg);
 		
 		BigDecimal calc1 = new BigDecimal(1);
 		BigDecimal calc120 = new BigDecimal(120);
 		BigDecimal def = new BigDecimal(this.def);
+				
+		BigDecimal dmgSubRate = calc1.divide( calc1.add ( def.divide ( calc120, 2 , RoundingMode.DOWN) ), 2 , RoundingMode.DOWN) ; //ダメージ減算率:1 / (1+ぼうぎょ÷120)※小数第3位切り捨て
 		
-		BigDecimal dmgSubRate = calc1.divide( calc1.add ( def.divide ( calc120 ) ) ).setScale( 2 , RoundingMode.DOWN); //ダメージ減算率:1 / (1+ぼうぎょ÷120)※小数第3位切り捨て
+		System.out.println(dmgSubRate);
 		
 		BigDecimal calcDmg = BigDecimal.valueOf(useWaza()).multiply(dmgSubRate);// 実際に受けるダメージ:値渡しされたダメージ値×ダメージ減算率
+		
+		System.out.println(calcDmg);
 		
 		int dmgd = 0;
 		
@@ -81,6 +98,8 @@ public class Monster1 {
 		}else {
 			dmgd = 0; //HP<ダメージであればHPに0を代入
 		}
+		
+		System.out.println(dmgd);
 		
 		return dmgd;
 	}

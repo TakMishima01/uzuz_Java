@@ -3,23 +3,24 @@ package churimon;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-public class Monster2 {
+public class Monster3 {
 	
 	//フィールド設定
-	String 	character 		;	//種族
-	String 	trainer 				;	//トレーナー
-	String 	name				;	//なまえ
-	int		lv						;	//レベル
-	int		hp					;	//HP
-	int		atk					;	//こうげき
-	int		def					;	//ぼうぎょ
-	int		spd					;	//すばやさ
-	int		hpMax				;	//HP初期値
-	String	wazaNm			;	//わざ（なまえ）
-	String	wazaDmgRate	;	//わざ（ダメージ倍率）
+	private String 	character 		;	//種族
+	private String 	trainer 				;	//トレーナー
+	private String 	name				;	//なまえ
+	private int		lv						;	//レベル
+	private int		hp					;	//HP
+	private int		atk					;	//こうげき
+	private int		def					;	//ぼうぎょ
+	private int		spd					;	//すばやさ
+	private int		hpMax				;	//HP初期値
+	private String	wazaNm			;	//わざ（なまえ）
+	private String	wazaDmgRate	;	//わざ（ダメージ倍率）
+	
 	
 	//コンストラクタ1(引数なし)
-	Monster2 () {
+	Monster3 () {
 		//フィールドの初期化
 		this.character 	=	"(unknown)"	;	//種族
 		this.trainer 		=	"(wild)"			;	//トレーナー
@@ -39,7 +40,7 @@ public class Monster2 {
 	}
 	
 	//コンストラクタ2(引数あり)
-	Monster2 ( String tn, String nm ) {
+	Monster3 ( String tn, String nm ) {
 		//フィールドの初期化
 		this();
 		this.trainer 	=	tn		;	//トレーナー
@@ -50,7 +51,7 @@ public class Monster2 {
 	}
 	
 	//コンストラクタ3(引数あり)
-	Monster2 ( String tn, String nm, int lev ) {
+	Monster3 ( String tn, String nm, int lev ) {
 		//フィールドの初期化
 		this(tn, nm);		
 		
@@ -77,7 +78,7 @@ public class Monster2 {
 				"wazaDmgRate:" + this.wazaDmgRate + "/" ;
 	}
 	
-	void levelUp( int lu ) {
+	public void levelUp( int lu ) {
 		lv			=	lu * 1 + lv				; //上昇レベル×1の値を既存値にプラスする
 		hpMax	=	lu * 30 + hpMax	; //上昇レベル×30の値を既存値にプラスする
 		atk		=	lu * 5 + atk			; //上昇レベル×5の値を既存値にプラスする
@@ -86,7 +87,7 @@ public class Monster2 {
 		hp		=	hpMax					; //更新後のhp_maxの値を代入する
 	}
 	
-	void setWaza ( String wn , String wdr ) {
+	public void setWaza ( String wn , String wdr ) {
 		
 		final String WAZA_DMG_RATE_REGEXP = "^[0-9]+\\.[0-9]$";
 		
@@ -98,12 +99,12 @@ public class Monster2 {
 		}
 	}
 	
-	String getStatus () {
+	public String getStatus () {
 		String st = this.name + "lv" + this.lv + "HP" + this.hp + "/" + this.hpMax ;
 		return st ;  //ステータス情報(一部フィールドの情報)を文字列で返す
 	}
 	
-	int useWaza () {
+	public int useWaza () {
 		BigDecimal atk = new BigDecimal(this.atk);
         BigDecimal wdr = new BigDecimal(this.wazaDmgRate);
         
@@ -116,7 +117,7 @@ public class Monster2 {
 		return dmg ; //相手にダメージ値を渡す
 	}
 	
-	int damaged (int dmg) {
+	public int damaged (int dmg) {
 		
 		System.out.println(dmg);
 		
@@ -144,6 +145,95 @@ public class Monster2 {
 		
 		return dmgd;
 	}
+
+	public String getCharacter() {
+		return character;
+	}
+
+	public void setCharacter(String character) {
+		this.character = character;
+	}
+
+	public String getTrainer() {
+		return trainer;
+	}
+
+	public void setTrainer(String trainer) {
+		this.trainer = trainer;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getLv() {
+		return lv;
+	}
+
+	public void setLv(int lv) {
+		this.lv = lv;
+	}
+
+	public int getHp() {
+		return hp;
+	}
+
+	public void setHp(int hp) {
+		this.hp = hp;
+	}
+
+	public int getAtk() {
+		return atk;
+	}
+
+	public void setAtk(int atk) {
+		this.atk = atk;
+	}
+
+	public int getDef() {
+		return def;
+	}
+
+	public void setDef(int def) {
+		this.def = def;
+	}
+
+	public int getSpd() {
+		return spd;
+	}
+
+	public void setSpd(int spd) {
+		this.spd = spd;
+	}
+
+	public int getHpMax() {
+		return hpMax;
+	}
+
+	public void setHpMax(int hpMax) {
+		this.hpMax = hpMax;
+	}
+
+	public String getWazaNm() {
+		return wazaNm;
+	}
+
+	public void setWazaNm(String wazaNm) {
+		this.wazaNm = wazaNm;
+	}
+
+	public String getWazaDmgRate() {
+		return wazaDmgRate;
+	}
+
+	public void setWazaDmgRate(String wazaDmgRate) {
+		this.wazaDmgRate = wazaDmgRate;
+	}
 	
+
 
 }
