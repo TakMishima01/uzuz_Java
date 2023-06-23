@@ -23,12 +23,12 @@ public class Hitokake extends Monster3 {
 	}
 	
 	public void levelUp( int lu ) {
-		super.setLv( lu * 1 + super.getLv() )					; //上昇レベル×1の値を既存値にプラスする
-		super.setHp( lu * 29 + this.getHp() )	; //上昇レベル×30の値を既存値にプラスする
-		super.setAtk( lu * 8 + this.getAtk() )					; //上昇レベル×5の値を既存値にプラスする
-		super.setDef( lu * 5 + this.getDef() )					; //上昇レベル×5の値を既存値にプラスする
-		super.setSpd (lu * 9 + this.getSpd() )					; //上昇レベル×5の値を既存値にプラスする
-		super.setHpMax( this.getHp() )							; //更新後のhp_maxの値を代入する
+		setLv	( lu * 1 + getLv() )		; //上昇レベル×1の値を既存値にプラスする
+		setHp	( lu * 29 + getHp() )	; //上昇レベル×30の値を既存値にプラスする
+		setAtk	( lu * 8 + getAtk() )		; //上昇レベル×5の値を既存値にプラスする
+		setDef	( lu * 5 + getDef() )		; //上昇レベル×5の値を既存値にプラスする
+		setSpd (lu * 9 + getSpd() )		; //上昇レベル×5の値を既存値にプラスする
+		setHpMax( getHp() )				; //更新後のhp_maxの値を代入する
 	}
 
 }
